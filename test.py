@@ -1,12 +1,13 @@
-name = input("What is your name?")
-age = int(input("How old are you?"))
+todays_temp = int(input("What is the temperature?"))
 
-if age >= 18:
-    print("you are an adult!")
-elif 13 <= age <= 17:
-    print("You are a Teenager!")
+if todays_temp <= 40:
+    print("Freezing")
+elif todays_temp <= 69:
+    print("A little chilly")
+elif todays_temp <= 90:
+    print("Perfect Weather")
 else:
-    print("You are a child!")
+    print("It's extremely hot!")
 
 
 

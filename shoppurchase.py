@@ -1,15 +1,18 @@
-gold = 10
-item_price = 18
-print(f'You have {gold} gold pieces!')
+# Ticket prices
+child = 6
+teenager = 8
+adult = 12
+elderly = 7
 
-purchase_item = input("Would you like to purchase an item for 18 gold pieces? (Yes/No)")
+age = int(input("How old are you?"))
 
-if purchase_item == 'yes' and gold >= item_price:
-    gold = gold - item_price
-    print("Item purchased!")
-    print(f'You now have {gold} gold pieces!')
-elif purchase_item == 'yes' and gold <= item_price:
-    print("Not enough gold!")
+if age <= 12:
+    print(f'Your ticket costs ${child}')
+elif age <= 17:
+    print(f'Your ticket costs ${teenager}')
+elif age <= 64:
+    print(f'Your ticket costs ${adult}')
 else:
-    print("Maybe next time!")
+    print(f'Your ticket costs ${elderly}')
+
 
