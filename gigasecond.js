@@ -1,11 +1,15 @@
-const currentDate = new Date();
-const laterDate = 10 ** 9;
-let testNumber = 31536000;
-//Solving this tomorrow w fully thinking
-let year = laterDate / testNumber;
-let wholeYear = Math.floor(year);
-let fractionalYear = year - wholeYear;
+function gigasecond(gs){
+ 
+  const gigasecond = 10**9;
+  const milliseconds = gigasecond * 1000;
+  
+  let timeStamp = gs.getTime();
+    timeStamp += milliseconds;
 
-console.log(currentDate.getFullYear());
-console.log(wholeYear + currentDate.getFullYear());
-console.log(fractionalYear);
+    let futureDate = new Date(timeStamp);
+    return futureDate;
+}
+
+const gs = new Date(Date.UTC(2011, 3, 25));
+console.log(gs);
+console.log(gigasecond(gs));
