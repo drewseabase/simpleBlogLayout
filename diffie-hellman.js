@@ -3,6 +3,10 @@ class DiffieHellman{
         this.p = p;
         this.g = g;
     }
+
+    getPublicKey(privateKey){
+        
+    }
     
 }
 
