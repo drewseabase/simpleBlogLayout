@@ -11,7 +11,6 @@ function threeOfEachThree(deck){
         }
         return acc;
     }, [])
-
 }
 
 function middleTwo(deck){
@@ -23,7 +22,7 @@ function sandwichTrick(deck){
     let last = deck[deck.length - 1];
     let middle = Math.floor(deck.length / 2);
 
-    return deck.reduce((acc, card, index)=> {
+    return deck.reduce((acc, card, index) => {
   
         if(index === middle){
             acc.push(last, first);
@@ -35,8 +34,23 @@ function sandwichTrick(deck){
     }, []);
 }
 
-let deck = [10,5,9,4,7,9,3,1,2,6];
+function twoIsSpecial(deck){
+    return deck.filter((value) => value === 2);
+}
+
+function perfectlyOrdered(deck){
+    return deck.sort((a,b)=> a - b);
+}
+
+function reorder(deck){
+    return deck.reverse();
+}
+
+let deck = [10,1,5,3,2,8,7];
 console.log(seeingDouble(deck));
 console.log(threeOfEachThree(deck));
 console.log(middleTwo(deck));
 console.log(sandwichTrick(deck));
+console.log(twoIsSpecial(deck));
+console.log(perfectlyOrdered(deck));
+console.log(reorder(deck));

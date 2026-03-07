@@ -1,15 +1,19 @@
 var lengthofLongestSubstring = function(s){
-    let map = [];
+    let set = new Set();
+    let left = 0;
+    let maxLength = 0;
 
-    for(let char of s){
-        if(!map.includes(char)){
-            map.push(char);
+    for(let right = 0; right < s.length; right++){
+        while(set.has(s[right])){
+            set.delete(s[right]);
+            left++;
         }
+
+        set.add(s[right]);
+        maxLength = Math.max(maxLength, right - left + 1);
     }
-    
-    let final = map.join('');
-   
-    return final.length;
+
+    return maxLength;
 };
 
 let s = 'pwwkew';
