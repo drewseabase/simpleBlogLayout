@@ -53,12 +53,40 @@ function getFirstOddCard(stack){
 function getFirstEvenCardPosition(stack){
     return stack.findIndex((value) => value % 2 === 0);
 }
+function cardTypeCheck(stack, card){
+    let count = 0;
 
-const stack = [9,7,3,2];
+    stack.forEach(element => {
+        if(element === card) count++;
+    });
+
+    return count;
+}
+
+function determineOddEvenCards(stack, type){
+    let count = 0;
+
+    if(type){
+        for(const card of stack){
+            if(card % 2 === 0) count++;
+        }
+    }else{
+        for(const card of stack){
+            if(card % 2 !== 0) count++;
+        }
+    }
+
+    return count;
+}
+
+const stack = [9,2,1,2];
 const card = 2;
+let type = true
 console.log(getCardPosition(stack, card));
 console.log(doesStackIncludeCard(stack,card));
 console.log(isEachCardEven(stack));
 console.log(doesStackIncludeCard(stack));
 console.log(getFirstOddCard(stack));
 console.log(getFirstEvenCardPosition(stack));
+console.log(cardTypeCheck(stack, card));
+console.log(determineOddEvenCards(stack, type));

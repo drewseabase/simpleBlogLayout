@@ -16,5 +16,5 @@ function palindrome(value){
     
 }
 
-let value = 122321;
+let value = -121;
 console.log(palindrome(value));

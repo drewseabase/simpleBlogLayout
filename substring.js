@@ -5,17 +5,17 @@ var lengthofLongestSubstring = function(s){
 
     for(let right = 0; right < s.length; right++){
         while(set.has(s[right])){
-            set.delete(s[right]);
+            set.delete(s[left]);
             left++;
         }
 
         set.add(s[right]);
         maxLength = Math.max(maxLength, right - left + 1);
     }
-
+    console.log(set);
     return maxLength;
 };
 
-let s = 'pwwkew';
+let s = 'ava';
 
 console.log(lengthofLongestSubstring(s));
